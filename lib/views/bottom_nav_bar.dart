@@ -2,11 +2,13 @@ import 'package:eagleeye/views/home.dart';
 import 'package:eagleeye/views/jobs.dart';
 import 'package:eagleeye/views/profile.dart';
 import 'package:eagleeye/views/saved_jobs.dart';
+import 'package:eagleeye/views/search_page.dart';
 import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../styles/app_colors.dart';
+import 'notification.dart';
 
 
 class BottomNavPage extends StatelessWidget {
@@ -24,19 +26,31 @@ class BottomNavPage extends StatelessWidget {
     return  Obx(
         ()=> Scaffold(
         appBar: AppBar(
-          title: const Row(
-            children:  [
-               Text('Eagle Eye'),
-               Text('\$',style: TextStyle(color: Colors.amber)),
-               Text(' Career',style: TextStyle(color: AppColors.themeColor2)),
-            ],
+          title: RichText(
+            text: const TextSpan(
+              children: [
+                TextSpan(
+                  text: 'Eagle Eye',
+                  style: TextStyle(color: Colors.black),
+                ),
+                TextSpan(
+                  text: '\$',
+                  style: TextStyle(color: Colors.amber),
+                ),
+                TextSpan(
+                  text: ' Career',
+                  style: TextStyle(color: AppColors.themeColor2),
+                ),
+              ],
+            ),
           ),
+
           actions: [
             IconButton(onPressed: () {
-
+              Get.to(()=> const SearchPage());
             }, icon: const Icon(Icons.search)),
             IconButton(onPressed: () {
-
+              Get.to(()=> const NotificationPage());
             }, icon: const Icon(Icons.notifications_none,)),
             const SizedBox(width: 10,)
           ],

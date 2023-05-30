@@ -24,12 +24,15 @@ class PasswordCreate extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 20,width: double.infinity,),
-              const Column(
+               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('      Create Password ',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
-                  Text('        Create a password , and remember it for future log in ',
-                    style: TextStyle(fontSize: 15,color: Colors.black),),
+                children: const [
+                  Text('     Create Password ',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 24.0),
+                    child: Text('Create a password , and remember it for future log in ',
+                      style: TextStyle(fontSize: 15,color: Colors.black),),
+                  ),
                 ],
               ),
               const SizedBox(height: 20,width: double.infinity,),

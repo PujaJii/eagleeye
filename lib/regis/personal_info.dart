@@ -24,10 +24,10 @@ class PersonalDetails extends StatelessWidget {
             // crossAxisAlignment: CrossAxisAlignment.center,
             // mainAxisAlignment: MainAxisAlignment.center,
            children: [
-             const SizedBox(height: 50,width: double.infinity,),
-             const Column(
+             const SizedBox(height: 40,width: double.infinity,),
+              Column(
                crossAxisAlignment: CrossAxisAlignment.start,
-               children: [
+               children: const [
                  Text('      Register',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
                  Text('Enter your details to create your Eagle eyes career account',
                    style: TextStyle(fontSize: 16,color: Colors.black),textAlign: TextAlign.center,),
@@ -48,13 +48,12 @@ class PersonalDetails extends StatelessWidget {
                  ),
                ],
              ),
-             const SizedBox(height: 20,),
-             
+             const SizedBox(height: 15,),
              Row(
                children: [
                  Expanded(
                    child: Container(
-                       margin: const EdgeInsets.fromLTRB(25,7,5,7),
+                       margin: const EdgeInsets.fromLTRB(25,5,5,5),
                       // decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
                        child: TextFormField(
                          //controller: createController.minutes,
@@ -86,7 +85,7 @@ class PersonalDetails extends StatelessWidget {
                  ),
                  Expanded(
                    child: Container(
-                       margin: const EdgeInsets.fromLTRB(5,7,25,7),
+                       margin: const EdgeInsets.fromLTRB(5,5,25,5),
                        //decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
                        child: TextFormField(
                          //controller: createController.minutes,
@@ -119,7 +118,7 @@ class PersonalDetails extends StatelessWidget {
                ],
              ),
              Container(
-               margin: const EdgeInsets.symmetric(horizontal: 25,vertical: 7),
+               margin: const EdgeInsets.symmetric(horizontal: 25,vertical: 5),
                child: TextFormField(
                  //controller: createController.minutes,
                  validator: (input) =>
@@ -147,7 +146,7 @@ class PersonalDetails extends StatelessWidget {
                ),
              ),
              Container(
-               margin: const EdgeInsets.symmetric(horizontal: 25,vertical: 7),
+               margin: const EdgeInsets.symmetric(horizontal: 25,vertical: 5),
                child: TextFormField(
                  //controller: createController.minutes,
                  validator: (input) =>
@@ -242,7 +241,7 @@ class PersonalDetails extends StatelessWidget {
                ],
              ),
              Container(
-               margin: const EdgeInsets.symmetric(horizontal: 25,vertical: 7),
+               margin: const EdgeInsets.symmetric(horizontal: 25,vertical: 5),
                child: TextFormField(
                  //controller: createController.minutes,
                  validator: (input) =>
@@ -270,7 +269,7 @@ class PersonalDetails extends StatelessWidget {
                ),
              ),
              Container(
-               margin: const EdgeInsets.symmetric(horizontal: 25,vertical: 7),
+               margin: const EdgeInsets.symmetric(horizontal: 25,vertical: 5),
                child: TextFormField(
                  //controller: createController.minutes,
                  validator: (input) =>
@@ -297,7 +296,7 @@ class PersonalDetails extends StatelessWidget {
                  ),
                ),
              ),
-             const SizedBox(height: 50,),
+             const SizedBox(height: 30,),
              Container(
                width: double.infinity,
                height: 44,
@@ -323,6 +322,7 @@ class PersonalDetails extends StatelessWidget {
                  ),
                ],
              ),
+             const SizedBox(height: 20,)
            ],
           ),
         ],

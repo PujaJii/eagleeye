@@ -33,13 +33,13 @@ class LogInPage extends StatelessWidget {
                   Row(
                     children: [
                       const Text('        Don’t have an account ?',
-                        style: TextStyle(fontSize: 15,color: Colors.black),),
+                        style: TextStyle(fontSize: 14,color: Colors.black),),
                       InkWell(
                         onTap: () {
                           Get.to(()=> const PersonalDetails());
                         },
-                        child: const Text(' Register your new account',
-                          style: TextStyle(fontSize: 15,color: AppColors.themeColor),),
+                        child: const Text(' Register new',
+                          style: TextStyle(fontSize: 14,color: AppColors.themeColor),),
                       ),
                     ],
                   ),

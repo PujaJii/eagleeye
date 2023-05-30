@@ -24,7 +24,7 @@ class KYCPage extends StatelessWidget {
              mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 20,width: double.infinity,),
-              const Column(
+               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('      Complete with KYC',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),

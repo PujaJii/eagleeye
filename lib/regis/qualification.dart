@@ -25,10 +25,10 @@ class QualificationDetails extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 80,width: double.infinity,),
-              const Column(
+               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('       Qualificaton',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
+                children: const [
+                  Text('       Qualification',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
                   Text('Please add your qualification details to find jobs accordingly.',
                     style: TextStyle(fontSize: 16,color: Colors.black),textAlign: TextAlign.center,),
                 ],
