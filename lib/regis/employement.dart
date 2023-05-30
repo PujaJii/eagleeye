@@ -25,15 +25,15 @@ class EmployementDetails extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 80,width: double.infinity,),
-              Column(
+              const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('      Employment',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
-                  const Text('        Enter your employement details',
+                  Text('        Enter your employement details',
                     style: TextStyle(fontSize: 15,color: Colors.black),),
                 ],
               ),
-              const SizedBox(height: 20,width: double.infinity,),
+              const SizedBox(height: 50,width: double.infinity,),
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 25,vertical: 7),
                 child: TextFormField(
@@ -55,7 +55,7 @@ class EmployementDetails extends StatelessWidget {
                         horizontal: 8.0, vertical: 8.0),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(40),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: AppColors.textFieldBorder,
                         )
                     ),
@@ -83,7 +83,7 @@ class EmployementDetails extends StatelessWidget {
                         horizontal: 8.0, vertical: 8.0),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(40),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: AppColors.textFieldBorder,
                         )
                     ),
@@ -111,7 +111,7 @@ class EmployementDetails extends StatelessWidget {
                         horizontal: 8.0, vertical: 8.0),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(40),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: AppColors.textFieldBorder,
                         )
                     ),
@@ -139,7 +139,7 @@ class EmployementDetails extends StatelessWidget {
                         horizontal: 8.0, vertical: 8.0),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(40),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: AppColors.textFieldBorder,
                         )
                     ),
@@ -167,7 +167,7 @@ class EmployementDetails extends StatelessWidget {
                         horizontal: 8.0, vertical: 8.0),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(40),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: AppColors.textFieldBorder,
                         )
                     ),

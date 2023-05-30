@@ -1,3 +1,4 @@
+import 'package:eagleeye/regis/log_in.dart';
 import 'package:eagleeye/styles/app_colors.dart';
 import 'package:eagleeye/regis/personal_info.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +56,7 @@ class Register extends StatelessWidget {
                 child: ElevatedButton(
                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(AppColors.themeColorLight)),
                     onPressed: () {
-
+                      Get.to(()=> const LogInPage());
                 }, child: const Text('Log In',style: TextStyle(color: Colors.white),)),
               ),const SizedBox(height: 20,),
               Container(
@@ -68,7 +69,7 @@ class Register extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
+                    SizedBox(
                       height: 20,
                       width: 20,
                       child: Image.asset('assets/images/google.png'),

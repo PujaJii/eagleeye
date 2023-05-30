@@ -1,3 +1,4 @@
+import 'package:eagleeye/regis/log_in.dart';
 import 'package:eagleeye/regis/qualification.dart';
 import 'package:eagleeye/styles/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -24,11 +25,11 @@ class PersonalDetails extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.center,
            children: [
              const SizedBox(height: 50,width: double.infinity,),
-             Column(
+             const Column(
                crossAxisAlignment: CrossAxisAlignment.start,
                children: [
                  Text('      Register',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
-                 const Text('Enter your details to create your Eagle eyes career account',
+                 Text('Enter your details to create your Eagle eyes career account',
                    style: TextStyle(fontSize: 16,color: Colors.black),textAlign: TextAlign.center,),
                ],
              ),
@@ -75,7 +76,7 @@ class PersonalDetails extends StatelessWidget {
                                horizontal: 8.0, vertical: 8.0),
                            border: OutlineInputBorder(
                                borderRadius: BorderRadius.circular(40),
-                               borderSide: BorderSide(
+                               borderSide: const BorderSide(
                                  color: AppColors.textFieldBorder,
                                )
                            ),
@@ -106,7 +107,7 @@ class PersonalDetails extends StatelessWidget {
                                horizontal: 8.0, vertical: 8.0),
                            border: OutlineInputBorder(
                                borderRadius: BorderRadius.circular(40),
-                               borderSide: BorderSide(
+                               borderSide: const BorderSide(
                                  color: AppColors.textFieldBorder,
                                )
                            ),
@@ -138,7 +139,7 @@ class PersonalDetails extends StatelessWidget {
                        horizontal: 8.0, vertical: 8.0),
                    border: OutlineInputBorder(
                        borderRadius: BorderRadius.circular(40),
-                       borderSide: BorderSide(
+                       borderSide: const BorderSide(
                          color: AppColors.textFieldBorder,
                        )
                    ),
@@ -166,7 +167,7 @@ class PersonalDetails extends StatelessWidget {
                        horizontal: 8.0, vertical: 8.0),
                    border: OutlineInputBorder(
                        borderRadius: BorderRadius.circular(40),
-                       borderSide: BorderSide(
+                       borderSide: const BorderSide(
                          color: AppColors.textFieldBorder,
                        )
                    ),
@@ -198,7 +199,7 @@ class PersonalDetails extends StatelessWidget {
                                horizontal: 8.0, vertical: 8.0),
                            border: OutlineInputBorder(
                                borderRadius: BorderRadius.circular(40),
-                               borderSide: BorderSide(
+                               borderSide: const BorderSide(
                                  color: AppColors.textFieldBorder,
                                )
                            ),
@@ -229,7 +230,7 @@ class PersonalDetails extends StatelessWidget {
                                horizontal: 8.0, vertical: 8.0),
                            border: OutlineInputBorder(
                                borderRadius: BorderRadius.circular(40),
-                               borderSide: BorderSide(
+                               borderSide: const BorderSide(
                                  color: AppColors.textFieldBorder,
                                )
                            ),
@@ -261,7 +262,7 @@ class PersonalDetails extends StatelessWidget {
                        horizontal: 8.0, vertical: 8.0),
                    border: OutlineInputBorder(
                        borderRadius: BorderRadius.circular(40),
-                       borderSide: BorderSide(
+                       borderSide: const BorderSide(
                          color: AppColors.textFieldBorder,
                        )
                    ),
@@ -289,7 +290,7 @@ class PersonalDetails extends StatelessWidget {
                        horizontal: 8.0, vertical: 8.0),
                    border: OutlineInputBorder(
                        borderRadius: BorderRadius.circular(40),
-                       borderSide: BorderSide(
+                       borderSide: const BorderSide(
                          color: AppColors.textFieldBorder,
                        )
                    ),
@@ -308,6 +309,20 @@ class PersonalDetails extends StatelessWidget {
 
                    }, child: const Text('Continue',style: TextStyle(color: Colors.white),)),
              ),const SizedBox(height: 20,),
+             Row(
+               mainAxisAlignment: MainAxisAlignment.center,
+               children: [
+                 const Text('        Already have an account?',
+                   style: TextStyle(fontSize: 15,color: Colors.black),),
+                 InkWell(
+                   onTap: () {
+                     Get.to(()=> const LogInPage());
+                   },
+                   child: const Text('  Log In',
+                     style: TextStyle(fontSize: 15,color: AppColors.themeColor),),
+                 ),
+               ],
+             ),
            ],
           ),
         ],

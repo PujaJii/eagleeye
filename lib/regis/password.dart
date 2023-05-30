@@ -24,11 +24,11 @@ class PasswordCreate extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 20,width: double.infinity,),
-              Column(
+              const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('      Create Password ',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
-                  const Text('        Create a password , and remember it for future log in ',
+                  Text('        Create a password , and remember it for future log in ',
                     style: TextStyle(fontSize: 15,color: Colors.black),),
                 ],
               ),
@@ -54,7 +54,7 @@ class PasswordCreate extends StatelessWidget {
                         horizontal: 8.0, vertical: 8.0),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(40),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: AppColors.textFieldBorder,
                         )
                     ),
@@ -82,7 +82,7 @@ class PasswordCreate extends StatelessWidget {
                         horizontal: 8.0, vertical: 8.0),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(40),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: AppColors.textFieldBorder,
                         )
                     ),

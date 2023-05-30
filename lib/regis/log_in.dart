@@ -29,7 +29,7 @@ class LogInPage extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('      Log In to continue',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
+                  const Text('      Log In to continue',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
                   Row(
                     children: [
                       const Text('        Don’t have an account ?',
@@ -38,7 +38,7 @@ class LogInPage extends StatelessWidget {
                         onTap: () {
                           Get.to(()=> const PersonalDetails());
                         },
-                        child: Text(' Register your new account',
+                        child: const Text(' Register your new account',
                           style: TextStyle(fontSize: 15,color: AppColors.themeColor),),
                       ),
                     ],
@@ -67,7 +67,7 @@ class LogInPage extends StatelessWidget {
                         horizontal: 8.0, vertical: 8.0),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(40),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: AppColors.textFieldBorder,
                         )
                     ),
@@ -95,7 +95,7 @@ class LogInPage extends StatelessWidget {
                         horizontal: 8.0, vertical: 8.0),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(40),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: AppColors.textFieldBorder,
                         )
                     ),

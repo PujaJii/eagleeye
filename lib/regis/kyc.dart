@@ -24,11 +24,11 @@ class KYCPage extends StatelessWidget {
              mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 20,width: double.infinity,),
-              Column(
+              const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('      Complete with KYC',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
-                  const Text('        Enter your KYC details',
+                  Text('        Enter your KYC details',
                     style: TextStyle(fontSize: 15,color: Colors.black),),
                 ],
               ),
@@ -54,7 +54,7 @@ class KYCPage extends StatelessWidget {
                         horizontal: 8.0, vertical: 8.0),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(40),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: AppColors.textFieldBorder,
                         )
                     ),
@@ -82,7 +82,7 @@ class KYCPage extends StatelessWidget {
                         horizontal: 8.0, vertical: 8.0),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(40),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: AppColors.textFieldBorder,
                         )
                     ),

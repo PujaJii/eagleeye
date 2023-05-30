@@ -25,11 +25,11 @@ class QualificationDetails extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 80,width: double.infinity,),
-              Column(
+              const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('       Qualificaton',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
-                  const Text('Please add your qualification details to find jobs accordingly.',
+                  Text('Please add your qualification details to find jobs accordingly.',
                     style: TextStyle(fontSize: 16,color: Colors.black),textAlign: TextAlign.center,),
                 ],
               ),
@@ -69,7 +69,7 @@ class QualificationDetails extends StatelessWidget {
                                       horizontal: 8.0, vertical: 8.0),
                                   border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(40),
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: AppColors.textFieldBorder,
                                       )
                                   ),
@@ -100,7 +100,7 @@ class QualificationDetails extends StatelessWidget {
                                       horizontal: 8.0, vertical: 8.0),
                                   border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(40),
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: AppColors.textFieldBorder,
                                       )
                                   ),
@@ -137,7 +137,7 @@ class QualificationDetails extends StatelessWidget {
                                       horizontal: 8.0, vertical: 8.0),
                                   border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(40),
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: AppColors.textFieldBorder,
                                       )
                                   ),
@@ -168,7 +168,7 @@ class QualificationDetails extends StatelessWidget {
                                       horizontal: 8.0, vertical: 8.0),
                                   border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(40),
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: AppColors.textFieldBorder,
                                       )
                                   ),
