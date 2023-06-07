@@ -17,9 +17,8 @@ class QualificationDetails extends StatelessWidget {
           SizedBox(
             height: double.infinity,
             width: double.infinity,
-            child: Image.asset('assets/images/bg_c.png',fit: BoxFit.cover,),
+            child: Image.asset('assets/images/bg_z.jpg',fit: BoxFit.cover,),
           ),
-
           ListView(
             // crossAxisAlignment: CrossAxisAlignment.center,
             // mainAxisAlignment: MainAxisAlignment.center,

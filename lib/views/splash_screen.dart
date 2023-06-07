@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:eagleeye/regis/register.dart';
+import 'package:eagleeye/views/splash_select.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
       // } else {
       //   Get.offAll(AuthService().handleAuthState());
       // }
-      Get.to(()=> const Register());
+      Get.to(()=> const SplashSelect());
     });
     super.initState();
   }

@@ -17,7 +17,7 @@ class Register extends StatelessWidget {
           SizedBox(
             height: double.infinity,
             width: double.infinity,
-            child: Image.asset('assets/images/bg_a.png',fit: BoxFit.cover,),
+            child: Image.asset('assets/images/bg_z.jpg',fit: BoxFit.cover,),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,7 +35,7 @@ class Register extends StatelessWidget {
               ),
               const SizedBox(height: 20,),
               const Text('We\'re Hiring \nBuild your future.Achieve your dreams',
-                  style: TextStyle(fontSize: 20),textAlign: TextAlign.center,),
+                  style: TextStyle(fontSize: 20,),textAlign: TextAlign.center,),
               const SizedBox(height: 50,),
               Container(
                 width: double.infinity,

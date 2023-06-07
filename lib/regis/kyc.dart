@@ -16,7 +16,7 @@ class KYCPage extends StatelessWidget {
           SizedBox(
             height: double.infinity,
             width: double.infinity,
-            child: Image.asset('assets/images/bg_c.png',fit: BoxFit.cover,),
+            child: Image.asset('assets/images/bg_z.jpg',fit: BoxFit.cover,),
           ),
 
           Column(
@@ -26,7 +26,7 @@ class KYCPage extends StatelessWidget {
               const SizedBox(height: 20,width: double.infinity,),
                Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   Text('      Complete with KYC',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
                   Text('        Enter your KYC details',
                     style: TextStyle(fontSize: 15,color: Colors.black),),

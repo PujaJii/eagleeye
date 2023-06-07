@@ -17,7 +17,7 @@ class EmployementDetails extends StatelessWidget {
           SizedBox(
             height: double.infinity,
             width: double.infinity,
-            child: Image.asset('assets/images/bg_c.png',fit: BoxFit.cover,),
+            child: Image.asset('assets/images/bg_z.jpg',fit: BoxFit.cover,),
           ),
 
           ListView(
@@ -27,7 +27,7 @@ class EmployementDetails extends StatelessWidget {
               const SizedBox(height: 80,width: double.infinity,),
                Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   Text('      Employment',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
                   Text('        Enter your employement details',
                     style: TextStyle(fontSize: 15,color: Colors.black),),
