@@ -58,7 +58,26 @@ class BottomNavPage extends StatelessWidget {
           body: Center(
             child: pages[selectedIndex.value],
           ),
-          drawer: const Drawer(),
+          drawer: Drawer(
+            child: ListView(
+              children: [
+                 DrawerHeader(
+                  child: Column(
+                    children: [
+                      ListTile(
+                        leading: const Icon(Icons.arrow_back),
+                       // title: const Text('Go Back'),
+                        onTap: () {
+                          Navigator.pop(context); // Closes the drawer
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+
+              ],
+            ),
+          ),
           bottomNavigationBar:  FlashyTabBar(
               selectedIndex: selectedIndex.value,
               showElevation: true,

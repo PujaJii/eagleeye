@@ -1,5 +1,6 @@
 import 'package:eagleeye/styles/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -7,6 +8,14 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var selectedItem = [].obs;
+    void addItem(int value) {
+      selectedItem.add(value);
+    }
+    void removeItem(int value) {
+      selectedItem.remove(value);
+    }
+
     return Scaffold(
       body:  Column(
         children: [
@@ -85,41 +94,66 @@ class HomePage extends StatelessWidget {
                                 ),
                                 Row(
                                   children: const [
-                                    Icon(Icons.payments_outlined,color: Colors.grey,size: 20),
+                                    Icon(Icons.payments_outlined,
+                                        color: Colors.grey,size: 20),
                                     Text('   ₹  10,000 - 15,000')
                                   ],
                                 ),
                                 Row(
                                   children: const [
-                                    Icon(Icons.account_tree_outlined,color: Colors.grey,size: 20),
+                                    Icon(Icons.account_tree_outlined,
+                                        color: Colors.grey,size: 20),
                                     Text('   Contractual  &  On roll')
                                   ],
                                 ),
                                 Row(
                                   children: const [
-                                    Icon(Icons.account_balance_outlined,color: Colors.grey,size: 20),
+                                    Icon(Icons.account_balance_outlined,
+                                        color: Colors.grey,size: 20),
                                     Text('   Mechanical Engineer')
                                   ],
                                 ),
                                 const SizedBox(height: 8,),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    const Icon(Icons.star_border_sharp,color: Colors.orange),
-                                    const SizedBox(width: 20,),
-                                    SizedBox(
-                                      width: 120,
-                                      height: 30,
-                                      child: ElevatedButton(
-                                          style: ButtonStyle(
-                                              shape: MaterialStateProperty.all(
-                                                  RoundedRectangleBorder(
-                                                      borderRadius: BorderRadius.circular(5)))),
-                                          onPressed: () {},
-                                          child: const Text('Apply')),
+                                Obx(
+                                    ()=> InkWell(
+                                    onTap: () {
+                                      if (selectedItem.contains(index)) {
+                                        removeItem(index);
+                                      } else {
+                                        addItem(index);
+                                      }
+                                      ScaffoldMessenger.of(context).showSnackBar(
+                                          SnackBar(
+                                              backgroundColor:
+                                              AppColors.themeColor,
+                                              content: const Text(
+                                                  'Saved Successfully!')));
+                                    },
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        selectedItem.contains(index)
+                                            ? const Icon(
+                                          Icons.star,
+                                          color: Colors.orange,
+                                        )
+                                            : const Icon(Icons.star_border_sharp),
+                                        const SizedBox(width: 20,),
+                                        SizedBox(
+                                          width: 120,
+                                          height: 30,
+                                          child: ElevatedButton(
+                                              style: ButtonStyle(
+                                                  shape: MaterialStateProperty.all(
+                                                      RoundedRectangleBorder(
+                                                          borderRadius: BorderRadius.circular(5)))),
+                                              onPressed: () {},
+                                              child: const Text('Apply')),
+                                        ),
+                                        const SizedBox(width: 10,),
+                                      ],
                                     ),
-                                    const SizedBox(width: 10,),
-                                  ],
+                                  ),
                                 ),
                                 const Text('2 days ago')
 
@@ -213,19 +247,22 @@ class HomePage extends StatelessWidget {
                                 ),
                                 Row(
                                   children: const [
-                                    Icon(Icons.payments_outlined,color: Colors.grey,size: 20),
+                                    Icon(Icons.payments_outlined,
+                                        color: Colors.grey,size: 20),
                                     Text('   ₹  10,000 - 15,000')
                                   ],
                                 ),
                                 Row(
                                   children: const [
-                                    Icon(Icons.account_tree_outlined,color: Colors.grey,size: 20),
+                                    Icon(Icons.account_tree_outlined,
+                                        color: Colors.grey,size: 20),
                                     Text('    Contractual  &  On roll')
                                   ],
                                 ),
                                 Row(
                                   children: const [
-                                    Icon(Icons.account_balance_outlined,color: Colors.grey,size: 20),
+                                    Icon(Icons.account_balance_outlined,
+                                        color: Colors.grey,size: 20),
                                     Text('   Mechanical Engineer')
                                   ],
                                 ),
@@ -233,7 +270,8 @@ class HomePage extends StatelessWidget {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    const Icon(Icons.star_border_sharp,color: Colors.orange),
+                                    const Icon(Icons.star_border_sharp,
+                                        color: Colors.orange),
                                     const SizedBox(width: 10,),
                                     SizedBox(
                                       width: 120,
@@ -336,7 +374,8 @@ class HomePage extends StatelessWidget {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: const [
-                                    Icon(Icons.star, color: Colors.amber,size: 20,),
+                                    Icon(Icons.star,
+                                      color: Colors.amber,size: 20,),
                                     Text('  4.6   |  165 Reviews')
                                   ],
                                 ),

@@ -191,7 +191,7 @@ class QualificationDetails extends StatelessWidget {
                 child: ElevatedButton(
                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(AppColors.themeColor)),
                     onPressed: () {
-                       Get.to(()=> const EmployementDetails());
+                       Get.to(()=> const EmploymentDetails());
 
                     }, child: const Text('Continue',style: TextStyle(color: Colors.white),)),
               ),const SizedBox(height: 20,),

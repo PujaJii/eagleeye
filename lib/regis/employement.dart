@@ -6,8 +6,8 @@ import 'kyc.dart';
 
 
 
-class EmployementDetails extends StatelessWidget {
-  const EmployementDetails({Key? key}) : super(key: key);
+class EmploymentDetails extends StatelessWidget {
+  const EmploymentDetails({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +25,11 @@ class EmployementDetails extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 80,width: double.infinity,),
-               Column(
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
                   Text('      Employment',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
-                  Text('        Enter your employement details',
+                  Text('        Enter your employment details',
                     style: TextStyle(fontSize: 15,color: Colors.black),),
                 ],
               ),
