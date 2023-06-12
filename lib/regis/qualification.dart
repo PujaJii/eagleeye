@@ -1,6 +1,7 @@
 import 'package:eagleeye/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'employement.dart';
 
@@ -11,6 +12,11 @@ class QualificationDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController degree = TextEditingController();
+    TextEditingController percentage = TextEditingController();
+    TextEditingController year = TextEditingController();
+    TextEditingController university = TextEditingController();
+    final _box = GetStorage();
     return Scaffold(
       body: Stack(
         children: [
@@ -20,20 +26,17 @@ class QualificationDetails extends StatelessWidget {
             child: Image.asset('assets/images/bg_z.jpg',fit: BoxFit.cover,),
           ),
           ListView(
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 80,width: double.infinity,),
-               Column(
+               const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text('       Qualification',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
                   Text('Please add your qualification details to find jobs accordingly.',
                     style: TextStyle(fontSize: 16,color: Colors.black),textAlign: TextAlign.center,),
                 ],
               ),
               const SizedBox(height: 20,width: double.infinity,),
-
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 15),
                 padding: const EdgeInsets.symmetric(vertical: 25),
@@ -49,7 +52,7 @@ class QualificationDetails extends StatelessWidget {
                               margin: const EdgeInsets.fromLTRB(25,7,5,7),
                               // decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
                               child: TextFormField(
-                                //controller: createController.minutes,
+                                controller: degree,
                                 validator: (input) =>
                                 input!.isEmpty ? "Please Enter degree" : null,
                                 // keyboardType: TextInputType.numberWithOptions(decimal: false),
@@ -81,7 +84,7 @@ class QualificationDetails extends StatelessWidget {
                               margin: const EdgeInsets.fromLTRB(5,7,25,7),
                               //decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
                               child: TextFormField(
-                                //controller: createController.minutes,
+                                controller: percentage,
                                 validator: (input) =>
                                 input!.isEmpty ? "Please Enter Percentage" : null,
                                 //keyboardType: TextInputType.numberWithOptions(decimal: false),
@@ -117,7 +120,7 @@ class QualificationDetails extends StatelessWidget {
                               margin: const EdgeInsets.fromLTRB(25,7,5,7),
                               // decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
                               child: TextFormField(
-                                //controller: createController.minutes,
+                                controller: year,
                                 validator: (input) =>
                                 input!.isEmpty ? "Please Enter year" : null,
                                 // keyboardType: TextInputType.numberWithOptions(decimal: false),
@@ -149,7 +152,7 @@ class QualificationDetails extends StatelessWidget {
                               margin: const EdgeInsets.fromLTRB(5,7,25,7),
                               //decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
                               child: TextFormField(
-                                //controller: createController.minutes,
+                                controller: university,
                                 validator: (input) =>
                                 input!.isEmpty ? "Please Enter board" : null,
                                 //keyboardType: TextInputType.numberWithOptions(decimal: false),
@@ -192,7 +195,10 @@ class QualificationDetails extends StatelessWidget {
                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(AppColors.themeColor)),
                     onPressed: () {
                        Get.to(()=> const EmploymentDetails());
-
+                       _box.write('degree', degree.text);
+                       _box.write('percentage', percentage.text);
+                       _box.write('year', year.text);
+                       _box.write('university', university.text);
                     }, child: const Text('Continue',style: TextStyle(color: Colors.white),)),
               ),const SizedBox(height: 20,),
             ],

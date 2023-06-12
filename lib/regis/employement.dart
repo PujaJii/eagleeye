@@ -25,9 +25,9 @@ class EmploymentDetails extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 80,width: double.infinity,),
-              Column(
+              const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text('      Employment',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
                   Text('        Enter your employment details',
                     style: TextStyle(fontSize: 15,color: Colors.black),),

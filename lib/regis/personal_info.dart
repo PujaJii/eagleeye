@@ -3,6 +3,7 @@ import 'package:eagleeye/regis/qualification.dart';
 import 'package:eagleeye/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 
 
@@ -11,6 +12,14 @@ class PersonalDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController name = TextEditingController();
+    TextEditingController email = TextEditingController();
+    TextEditingController number = TextEditingController();
+    TextEditingController birthDate = TextEditingController();
+    TextEditingController martialStatus = TextEditingController();
+    TextEditingController currentStatus = TextEditingController();
+    TextEditingController permanentStatus = TextEditingController();
+    final _box = GetStorage();
     return Scaffold(
       body: Stack(
         children: [
@@ -19,21 +28,18 @@ class PersonalDetails extends StatelessWidget {
             width: double.infinity,
             child: Image.asset('assets/images/bg_z.jpg',fit: BoxFit.cover,),
           ),
-
           ListView(
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            // mainAxisAlignment: MainAxisAlignment.center,
            children: [
-             const SizedBox(height: 40,width: double.infinity,),
-              Column(
+             const SizedBox(height: 40,width: double.infinity),
+             const Column(
                crossAxisAlignment: CrossAxisAlignment.start,
-               children: const [
+               children: [
                  Text('      Register',style: TextStyle(color: AppColors.themeColor,fontSize: 20)),
                  Text('Enter your details to create your Eagle eyes career account',
                    style: TextStyle(fontSize: 16,color: Colors.black),textAlign: TextAlign.center,),
                ],
              ),
-             const SizedBox(height: 20,width: double.infinity,),
+             const SizedBox(height: 20,width: double.infinity),
              Row(
                mainAxisAlignment: MainAxisAlignment.center,
                children: [
@@ -49,78 +55,38 @@ class PersonalDetails extends StatelessWidget {
                ],
              ),
              const SizedBox(height: 15,),
-             Row(
-               children: [
-                 Expanded(
-                   child: Container(
-                       margin: const EdgeInsets.fromLTRB(25,5,5,5),
-                      // decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
-                       child: TextFormField(
-                         //controller: createController.minutes,
-                         validator: (input) =>
-                         input!.isEmpty ? "Please Enter name" : null,
-                        // keyboardType: TextInputType.numberWithOptions(decimal: false),
-                         decoration: InputDecoration(
-
-                           hintText: ' First name',
-                           hintStyle: const TextStyle(fontSize: 14,color: Colors.grey),
-                           fillColor: AppColors.textField,
-                           filled: true,
-                           labelText: '   First Name',
-                           labelStyle: const TextStyle(
-                               fontSize: 13,
-                               color: Colors.grey,
-                               fontStyle: FontStyle.normal),
-                           contentPadding: const EdgeInsets.symmetric(
-                               horizontal: 8.0, vertical: 8.0),
-                           border: OutlineInputBorder(
-                               borderRadius: BorderRadius.circular(40),
-                               borderSide: const BorderSide(
-                                 color: AppColors.textFieldBorder,
-                               )
-                           ),
-                         ),
+             Container(
+               margin: const EdgeInsets.symmetric(horizontal: 25,vertical: 5),
+               child: TextFormField(
+                 controller: name,
+                 validator: (input) =>
+                 input!.isEmpty ? "Please Enter name" : null,
+                 //keyboardType: TextInputType.numberWithOptions(decimal: false),
+                 decoration: InputDecoration(
+                   hintText: ' Enter name',
+                   hintStyle: const TextStyle(fontSize: 14,color: Colors.grey),
+                   fillColor: AppColors.textField,
+                   filled: true,
+                   labelText: '   Name',
+                   labelStyle: const TextStyle(
+                       fontSize: 13,
+                       color: Colors.grey,
+                       fontStyle: FontStyle.normal),
+                   contentPadding: const EdgeInsets.symmetric(
+                       horizontal: 8.0, vertical: 8.0),
+                   border: OutlineInputBorder(
+                       borderRadius: BorderRadius.circular(40),
+                       borderSide: const BorderSide(
+                         color: AppColors.textFieldBorder,
                        )
                    ),
                  ),
-                 Expanded(
-                   child: Container(
-                       margin: const EdgeInsets.fromLTRB(5,5,25,5),
-                       //decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
-                       child: TextFormField(
-                         //controller: createController.minutes,
-                         validator: (input) =>
-                         input!.isEmpty ? "Please Enter name" : null,
-                         //keyboardType: TextInputType.numberWithOptions(decimal: false),
-                         decoration: InputDecoration(
-                           hintText: ' Last name',
-                           hintStyle: const TextStyle(fontSize: 14,color: Colors.grey),
-                           fillColor: AppColors.textField,
-                           filled: true,
-                           labelText: '   Last Name',
-                           labelStyle: const TextStyle(
-                               fontSize: 13,
-                               color: Colors.grey,
-                               fontStyle: FontStyle.normal),
-                           contentPadding: const EdgeInsets.symmetric(
-                               horizontal: 8.0, vertical: 8.0),
-                           border: OutlineInputBorder(
-                               borderRadius: BorderRadius.circular(40),
-                               borderSide: const BorderSide(
-                                 color: AppColors.textFieldBorder,
-                               )
-                           ),
-                         ),
-                       )
-                   ),
-                 ),
-
-               ],
+               ),
              ),
              Container(
                margin: const EdgeInsets.symmetric(horizontal: 25,vertical: 5),
                child: TextFormField(
-                 //controller: createController.minutes,
+                 controller: email,
                  validator: (input) =>
                  input!.isEmpty ? "Please Enter email" : null,
                  //keyboardType: TextInputType.numberWithOptions(decimal: false),
@@ -148,7 +114,7 @@ class PersonalDetails extends StatelessWidget {
              Container(
                margin: const EdgeInsets.symmetric(horizontal: 25,vertical: 5),
                child: TextFormField(
-                 //controller: createController.minutes,
+                 controller: number,
                  validator: (input) =>
                  input!.isEmpty ? "Please Enter number" : null,
                  //keyboardType: TextInputType.numberWithOptions(decimal: false),
@@ -180,7 +146,7 @@ class PersonalDetails extends StatelessWidget {
                        margin: const EdgeInsets.fromLTRB(25,10,5,10),
                        // decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
                        child: TextFormField(
-                         //controller: createController.minutes,
+                         controller: birthDate,
                          validator: (input) =>
                          input!.isEmpty ? "Enter Birth date" : null,
                          //keyboardType: TextInputType.numberWithOptions(decimal: false),
@@ -211,7 +177,7 @@ class PersonalDetails extends StatelessWidget {
                        margin: const EdgeInsets.fromLTRB(5,10,25,10),
                        //decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
                        child: TextFormField(
-                         //controller: createController.minutes,
+                         controller: martialStatus,
                          validator: (input) =>
                          input!.isEmpty ? "Enter Marital status" : null,
                          //keyboardType: TextInputType.numberWithOptions(decimal: false),
@@ -243,7 +209,7 @@ class PersonalDetails extends StatelessWidget {
              Container(
                margin: const EdgeInsets.symmetric(horizontal: 25,vertical: 5),
                child: TextFormField(
-                 //controller: createController.minutes,
+                 controller: currentStatus,
                  validator: (input) =>
                  input!.isEmpty ? "Please Enter address" : null,
                 // keyboardType: TextInputType.numberWithOptions(decimal: false),
@@ -271,7 +237,7 @@ class PersonalDetails extends StatelessWidget {
              Container(
                margin: const EdgeInsets.symmetric(horizontal: 25,vertical: 5),
                child: TextFormField(
-                 //controller: createController.minutes,
+                 controller: permanentStatus,
                  validator: (input) =>
                  input!.isEmpty ? "Please Enter address" : null,
                  //keyboardType: TextInputType.numberWithOptions(decimal: false),
@@ -305,6 +271,13 @@ class PersonalDetails extends StatelessWidget {
                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all(AppColors.themeColor)),
                    onPressed: () {
                       Get.to(()=> const QualificationDetails());
+                      _box.write('name', name.text);
+                      _box.write('email', email.text);
+                      _box.write('number', number.text);
+                      _box.write('birthDate', birthDate.text);
+                      _box.write('martialStatus', martialStatus.text);
+                      _box.write('currentStatus', currentStatus.text);
+                      _box.write('permanentStatus', permanentStatus.text);
 
                    }, child: const Text('Continue',style: TextStyle(color: Colors.white),)),
              ),const SizedBox(height: 20,),

@@ -47,7 +47,7 @@ class _SplashSelectState extends State<SplashSelect> {
                       },
                       child: Material(
                         elevation: 7,
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(40),
                         child: Container(
                           height: 45,
                           width: 130,
