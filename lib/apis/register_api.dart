@@ -10,32 +10,36 @@ class RegisterApi{
 
   static Future<RegisterModel> register(
       String name,
-      String username,
       String email,
-      String password,
       String mobile_number,
       String birth_date,
       String maritual_status,
       String current_address,
       String permanent_address,
+
+
       String degree_name,
       String percentage,
       String year_of_passing,
       String university,
+
       String addhhar_number,
       String pan_number,
+
       String last_company_name,
       String previous_salary,
       String total_work_time,
+      String username,
       String indestry_type,
+
+      String password,
       {dynamic image}
       ) async {
-    var request = http.MultipartRequest('POST', Uri.parse('${AppConstants.baseUrl}/comapny/register/'));
+    var request = http.MultipartRequest('POST', Uri.parse('${AppConstants.baseUrl}registration'));
     request.fields.addAll({
       'name': name,
-      'username': username,
       'email': email,
-      'password': password,
+
       'image': ' profile.jpg',
       'mobile_number': mobile_number,
       'birth_date': birth_date,
@@ -51,9 +55,12 @@ class RegisterApi{
       'last_company_name': last_company_name,
       'previous_salary': previous_salary,
       'total_work_time': total_work_time,
-      'indestry_type': indestry_type
+      'username': username,
+      'indestry_type': indestry_type,
+
+      'password': password,
     });
-    if(image == '')
+    if(image == ''|| image == null)
     {}
     else {
       request.files.add(

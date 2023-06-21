@@ -38,6 +38,7 @@ dependencies:
   flashy_tab_bar2: ^0.0.6
   http: ^0.13.5
   get_storage: ^2.1.1
+  connectivity_plus: ^4.0.1
 
 dev_dependencies:
   flutter_test:
