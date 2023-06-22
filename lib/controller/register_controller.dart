@@ -61,7 +61,7 @@ class RegisterController extends GetxController{
 
       if(apiResponse.status=='success'){
         Get.offAll(() => const BottomNavPage());
-        _box.write('isCompanyLogin', true);
+        _box.write('isUserLogin', true);
         Get.snackbar('Registered successfully', apiResponse.message.toString(),backgroundColor: Colors.white);
       }
       else if(apiResponse.status =='false'){

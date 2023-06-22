@@ -1,4 +1,9 @@
+import 'dart:async';
+
+import 'package:eagleeye/views/splash_select.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 
 class Profile extends StatelessWidget {
@@ -6,6 +11,7 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _box = GetStorage();
     return Scaffold(
       body: ListView(
         children: [
@@ -46,7 +52,20 @@ class Profile extends StatelessWidget {
             child: Text('Professional details'),
           ),
 
-          const Center(child: Text('Coming Soon...!'))
+          const Center(child: Text('Coming Soon...!')),
+          const SizedBox(height: 20,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(onPressed: () {
+                Get.dialog(const Center(child: CircularProgressIndicator()),
+                    barrierDismissible: false);
+                _box.write('isUserLogin', false);
+                Timer(const Duration(seconds: 2), () {
+                  Get.offAll(()=> const SplashSelect());});
+              }, child: const Text('Log Out')),
+            ],
+          )
 
         ],
       ),

@@ -27,7 +27,7 @@ class LogInController extends GetxController{
     if(apiResponse!=null){
       if(apiResponse.status=='success'){
         Get.offAll(() => const BottomNavPage());
-        _box.write('isCompanyLogin', true);
+        _box.write('isUserLogin', true);
         Get.snackbar('Log In successful', apiResponse.message.toString(),backgroundColor: Colors.white);
       }
       else if(apiResponse.status =='false'){

@@ -32,10 +32,11 @@ class _SplashScreenState extends State<SplashScreen> {
         // I am not connected to a network.
         Get.offAll(()=> const NoInternetPage());
       } else {
-        if(_box.read('isCompanyLogin') == true){
+        print(_box.read('isUserLogin'));
+        if(_box.read('isUserLogin') == true){
           Get.offAll(()=> const BottomNavPage());
-        }
-        Get.offAll(()=> const SplashSelect());
+        }else{
+        Get.offAll(()=> const SplashSelect());}
       }
     });
     super.initState();

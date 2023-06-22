@@ -1,4 +1,4 @@
-import 'package:eagleeye/regis/register.dart';
+import 'package:eagleeye/views/regis/register.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -118,7 +118,11 @@ class _SplashSelectState extends State<SplashSelect> {
                 isSelected1 == false || isSelected2 == false?
                 InkWell(
                   onTap: () async {
-                    Get.to(()=> const Register());
+                    if(isSelected1 == false){
+                      Get.to(()=> const Register());
+                    }else{
+                      Get.to(()=> const Register());
+                    }
                   },
                   child: Material(
                     elevation: 7,
