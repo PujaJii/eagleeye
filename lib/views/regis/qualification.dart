@@ -2,6 +2,7 @@ import 'package:eagleeye/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:intl/intl.dart';
 
 import 'employement.dart';
 
@@ -37,7 +38,9 @@ class _QualificationDetailsState extends State<QualificationDetails> {
             ),
             ListView(
               children: [
-                const SizedBox(height: 80,width: double.infinity,),
+                const SizedBox(
+                  height: 80,width: double.infinity,
+                ),
                  const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -68,11 +71,11 @@ class _QualificationDetailsState extends State<QualificationDetails> {
                                   // keyboardType: TextInputType.numberWithOptions(decimal: false),
                                   decoration: InputDecoration(
 
-                                    hintText: 'Choose Degree',
+                                    hintText: 'Enter Degree',
                                     hintStyle: const TextStyle(fontSize: 14,color: Colors.grey),
                                     fillColor: AppColors.textField,
                                     filled: true,
-                                    labelText: '   Choose Degree',
+                                    labelText: '   Enter Degree',
                                     labelStyle: const TextStyle(
                                         fontSize: 13,
                                         color: Colors.grey,
@@ -130,31 +133,48 @@ class _QualificationDetailsState extends State<QualificationDetails> {
                                 margin: const EdgeInsets.fromLTRB(25,7,5,7),
                                 // decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
                                 child: TextFormField(
-                                  controller: year,
-                                  validator: (input) =>
-                                  input!.isEmpty ? "Please Enter year" : null,
-                                  keyboardType: const TextInputType.numberWithOptions(decimal: false),
-                                  decoration: InputDecoration(
+                                  //keyboardType: TextInputType.datetime,
+                                    controller: year,
+                                    validator: (input) =>
+                                    input!.isEmpty ? "Please select year" : null,
+                                    readOnly: true,
+                                    onTap: () async {
+                                      DateTime? pickedDate = await showDatePicker(
+                                          context: context,
+                                          initialDate: DateTime.now(),
+                                          firstDate: DateTime.now(),
+                                          //DateTime.now() - not to allow to choose before today.
+                                          lastDate: DateTime(2100));
+                                      if (pickedDate != null) {
+                                        //print(pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
+                                        String formattedDate =
+                                        DateFormat('yyyy').format(pickedDate);
+                                        //print(formattedDate); //formatted date output using intl package =>  2021-03-16
+                                        setState(() {
+                                          year.text =
+                                              formattedDate; //set output date to TextField value.
+                                        });
+                                      } else {}
+                                    },
+                                    textInputAction: TextInputAction.next,
+                                    style: const TextStyle(fontSize: 15, color: AppColors.black),
+                                    decoration: InputDecoration(
+                                      hintStyle: const TextStyle(
+                                          fontSize: 13, color: Colors.grey),
+                                      fillColor: AppColors.white,
+                                      filled: true,
+                                      contentPadding: const EdgeInsets.symmetric(
+                                          horizontal: 16.0, vertical: 16.0),
+                                      hintText: '  Enter passing year',
 
-                                    hintText: 'Year of passing',
-                                    hintStyle: const TextStyle(fontSize: 14,color: Colors.grey),
-                                    fillColor: AppColors.textField,
-                                    filled: true,
-                                    labelText: '   Year of passing',
-                                    labelStyle: const TextStyle(
-                                        fontSize: 13,
-                                        color: Colors.grey,
-                                        fontStyle: FontStyle.normal),
-                                    contentPadding: const EdgeInsets.symmetric(
-                                        horizontal: 8.0, vertical: 8.0),
-                                    border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(40),
-                                        borderSide: const BorderSide(
-                                          color: AppColors.textFieldBorder,
-                                        )
-                                    ),
-                                  ),
-                                )
+                                      border: OutlineInputBorder(
+                                          borderRadius: BorderRadius.circular(40),
+                                          borderSide: const BorderSide(
+                                            color: AppColors.textFieldBorder,
+                                          )
+                                      ),
+                                    )
+                                ),
                             ),
                           ),
                           Expanded(
@@ -195,6 +215,21 @@ class _QualificationDetailsState extends State<QualificationDetails> {
                   ),
                 ),
                 const SizedBox(height: 50,),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                   // width: 120,
+                    height: 44,
+                    margin: const EdgeInsets.only(right: 20),
+                    child: ElevatedButton(
+                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all(AppColors.themeColor)),
+                        onPressed: () {
+
+                        },
+                        child: const Text('Add More +',style: TextStyle(color: Colors.white),)),
+                  ),
+                ),
+                const SizedBox(height: 50,),
                 Container(
                   width: double.infinity,
                   height: 44,
@@ -210,7 +245,8 @@ class _QualificationDetailsState extends State<QualificationDetails> {
                           _box.write('university', university.text);
                         }
                       }, child: const Text('Continue',style: TextStyle(color: Colors.white),)),
-                ),const SizedBox(height: 20,),
+                ),
+                const SizedBox(height: 20,),
               ],
             ),
           ],
