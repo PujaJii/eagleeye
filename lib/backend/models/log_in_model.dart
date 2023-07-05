@@ -11,7 +11,7 @@ String logInModelToJson(LogInModel data) => json.encode(data.toJson());
 class LogInModel {
   String? status;
   String? message;
-  List<Datum>? data;
+  List<LoginData>? data;
 
   LogInModel({
     this.status,
@@ -22,7 +22,7 @@ class LogInModel {
   factory LogInModel.fromJson(Map<String, dynamic> json) => LogInModel(
     status: json["status"],
     message: json["message"],
-    data: json["data"] == null ? [] : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
+    data: json["data"] == null ? [] : List<LoginData>.from(json["data"]!.map((x) => LoginData.fromJson(x))),
   );
 
   Map<String, dynamic> toJson() => {
@@ -32,7 +32,7 @@ class LogInModel {
   };
 }
 
-class Datum {
+class LoginData {
   int? id;
   String? name;
   String? username;
@@ -60,7 +60,7 @@ class Datum {
   String? indestryType;
   String? imageUrl;
 
-  Datum({
+  LoginData({
     this.id,
     this.name,
     this.username,
@@ -89,7 +89,7 @@ class Datum {
     this.imageUrl,
   });
 
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+  factory LoginData.fromJson(Map<String, dynamic> json) => LoginData(
     id: json["id"],
     name: json["name"],
     username: json["username"],

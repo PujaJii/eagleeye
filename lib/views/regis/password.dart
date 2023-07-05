@@ -1,7 +1,8 @@
-import 'package:eagleeye/controller/register_controller.dart';
 
 import 'package:eagleeye/styles/app_colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../backend/controller/register_controller.dart';
 
 
 

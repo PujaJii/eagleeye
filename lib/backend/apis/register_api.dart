@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
 
+import '../../utils/constants/app_constants.dart';
 import '../models/register_model.dart';
-import '../utils/constants/app_constants.dart';
 
 
 

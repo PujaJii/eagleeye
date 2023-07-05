@@ -207,7 +207,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                          //decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
                          child:  DropdownButtonFormField(
                            validator: (input) =>
-                           input == null ? 'Please Marital status' : null,
+                           input == null ? 'Enter Marital status' : null,
                            iconSize: 0,
                            decoration: InputDecoration(
                              filled: true,

@@ -78,7 +78,7 @@ class Register extends StatelessWidget {
                     const Text('    Continue with Google'),
                   ],
                 )),
-              )
+              ),const SizedBox(height: 50,)
             ],
           ),
         ],

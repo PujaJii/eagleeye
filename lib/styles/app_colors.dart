@@ -4,6 +4,7 @@ class AppColors {
 
   //#ca1f26
   static const Color themeColor =  Color(0xFF4D5DEF);
+  static const Color themeColorDark =  Color(0xFF030A49);
   static const Color themeColor2 =  Color(0xFF006541);
   static const Color textField = Color(0xd9ffffff);
   static const Color textFieldBorder = Color(0xff9ba4fd);

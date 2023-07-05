@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../styles/app_colors.dart';
+import '../company_home.dart';
 
 
 
@@ -119,7 +121,7 @@ class _CompanyLogInState extends State<CompanyLogIn> {
                       onPressed: () {
                         if(_key.currentState!.validate()){
                          // logInController.logIn();
-                          //Get.to(()=> const BottomNavPage());
+                          Get.to(()=> const CompanyHome(0));
                         }
                       }, child: const Text('Continue',style: TextStyle(color: Colors.white),)),
                 ),const SizedBox(height: 20,),

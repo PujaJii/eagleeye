@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../styles/app_colors.dart';
+import 'company_views/regis/company_register.dart';
 
 
 
@@ -121,7 +122,7 @@ class _SplashSelectState extends State<SplashSelect> {
                     if(isSelected1 == false){
                       Get.to(()=> const Register());
                     }else{
-                      Get.to(()=> const Register());
+                      Get.to(()=> const CompanyRegister());
                     }
                   },
                   child: Material(

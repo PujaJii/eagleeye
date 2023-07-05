@@ -1,9 +1,10 @@
-import 'package:eagleeye/controller/log_in_controller.dart';
 
 import 'package:eagleeye/styles/app_colors.dart';
 import 'package:eagleeye/views/regis/personal_info.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../backend/controller/log_in_controller.dart';
 
 
 

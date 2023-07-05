@@ -1,9 +1,10 @@
-import 'package:eagleeye/apis/log_in_api.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-import '../views/bottom_nav_bar.dart';
+import '../../views/bottom_nav_bar.dart';
+import '../apis/log_in_api.dart';
+import '../models/log_in_model.dart';
 
 
 
@@ -15,6 +16,7 @@ class LogInController extends GetxController{
 
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
+  List<LoginData> loginData  = [];
 
 
   logIn () async {

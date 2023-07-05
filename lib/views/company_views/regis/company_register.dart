@@ -7,9 +7,6 @@ import 'company_login.dart';
 
 
 
-
-
-
 class CompanyRegister extends StatelessWidget {
   const CompanyRegister({Key? key}) : super(key: key);
 
@@ -38,7 +35,7 @@ class CompanyRegister extends StatelessWidget {
 
               ),
               const SizedBox(height: 20,),
-              const Text('We\'re Hiring \nBuild your future.Achieve your dreams',
+              const Text('Eagle Eyes Career: A place to build your own team based on your criteria',
                 style: TextStyle(fontSize: 20,),textAlign: TextAlign.center,),
               const SizedBox(height: 50,),
               Container(
@@ -81,7 +78,7 @@ class CompanyRegister extends StatelessWidget {
                     const Text('    Continue with Google'),
                   ],
                 )),
-              )
+              ), const SizedBox(height: 50,)
             ],
           ),
         ],
